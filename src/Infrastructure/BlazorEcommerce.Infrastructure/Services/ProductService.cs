@@ -143,27 +143,7 @@ public class ProductService(IUnitOfWork unitOfWork, IMapper mapper) : IProductSe
 
 		var products = await unitOfWork.Repository<Product>().GetAllAsync(spec);
 
-		var result = new List<string>();
-
-	    foreach (var product in products)
-	    {
-		    if (product.Name.Contains(searchText, StringComparison.OrdinalIgnoreCase))
-			    result.Add(product.Name);
-
-			var punctuation = product.Description.Where(char.IsPunctuation).Distinct().ToArray();
-
-			var words = product.Description.Split().Select(s => s.Trim(punctuation));
-
-			foreach (var word in words)
-			{
-			    if (word.Contains(searchText, StringComparison.OrdinalIgnoreCase) && !result.Contains(word))
-			    {
-				    result.Add(word);
-			    }
-			}
-	    }
-
-	    return result;
+		return (from product in products where product.Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) select product.Name).ToList();
     }
 
 }

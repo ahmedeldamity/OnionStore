@@ -10,10 +10,10 @@
 
 <PageTitle>Login</PageTitle>
 
-<EditForm Model="User" OnValidSubmit="HandleValidSubmit" class="mx-auto p-4 bg-light-subtle shadow-sm rounded-3" style="max-width: 400px;">
+<EditForm Model="User" OnValidSubmit="HandleValidSubmit" class="mx-auto p-4 bg-body-secondary shadow-sm rounded-3" style="max-width: 400px;">
     <DataAnnotationsValidator />
 
-    <h2 class="text-center mb-4 fw-bold">Welcome Back!</h2>
+    <h2 class="text-center mb-4 fw-bold text-primary">Welcome Back!</h2>
 
     <div class="form-floating my-3">
         <InputText type="email" id="email" class="form-control" @bind-Value="User.Email" placeholder="Enter your email" />
@@ -33,7 +33,7 @@
         <ValidationMessage For="@(() => User.ConfirmPassword)" />
     </div>
 
-    <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Login</button>
+    <button type="submit" class="btn btn-primary w-100 py-3 fw-bold">Login</button>
 
     <hr class="my-4" />
 
@@ -44,7 +44,7 @@
     <div class="text-center">
 	    <p>or login with:</p>
         <a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?client_id=@GoogleSettings.Value.ClientId&redirect_uri=@Url.Value.BaseUrl/google-oauth-code&response_type=code&scope=openid%20profile%20email"
-           class="btn btn-outline-info w-100 py-2 mb-2 fw-bold fs-5">
+           class="btn btn-outline-secondary w-100 py-2 mb-2 fw-bold fs-5">
 	        <i class="bi bi-google"></i>
             <span class="d-inline-block">Google</span>
         </a>

@@ -15,15 +15,15 @@
 			<ul class="list-group my-3 pointer bg-light-subtle shadow-sm rounded-2">
 				@foreach (var brand in ProductService.Brands)
 				{
-					<li class="list-group-item @(brand.Id == ProductService.SpecificationParameters.BrandId ? "active bg-primary text-white" : "")"
+					<li class="list-group-item @(brand.Id == ProductService.SpecificationParameters.BrandId ? "active" : "")"
 					@onclick="() => BrandChange(brand.Id)">@brand.Name</li>
 				}
 			</ul>
-			<h5 class="text-warning ms-3 fw-bold bg-light-subtle shadow-sm rounded-2">Categories </h5>
+			<h5 class="text-warning ms-3 fw-bold">Categories </h5>
 			<ul class="list-group my-3 pointer">
 				@foreach (var category in ProductService.Categories)
 				{
-					<li class="list-group-item @(category.Id == ProductService.SpecificationParameters.CategoryId ? "active bg-primary text-white " : "")"
+					<li class="list-group-item @(category.Id == ProductService.SpecificationParameters.CategoryId ? "active" : "")"
 						@onclick="() => CategoryChange(category.Id)">@category.Name</li>
 				}
 			</ul>

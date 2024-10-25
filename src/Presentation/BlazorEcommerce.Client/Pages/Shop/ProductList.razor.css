@@ -14,9 +14,3 @@
 .pointer {
     cursor: pointer;
 }
-
-.list-group-item {
-    border: none;
-    background-color: white;
-    color: black ;
-}

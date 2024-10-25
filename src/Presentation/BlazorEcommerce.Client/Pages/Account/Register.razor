@@ -8,11 +8,11 @@
 
 <PageTitle>Register</PageTitle>
 
-<EditForm Model="User" OnValidSubmit="HandleValidSubmit" class="mx-auto p-3 bg-light-subtle shadow-sm rounded-2" style="max-width: 400px;">
+<EditForm Model="User" OnValidSubmit="HandleValidSubmit" class="mx-auto p-3 bg-body-secondary shadow-sm rounded-2" style="max-width: 400px;">
 	<DataAnnotationsValidator />
 	<ValidationSummary />
 
-	<h2 class="text-center mb-4 fw-bold">Join Us Today!</h2>
+	<h2 class="text-center mb-4 fw-bold text-primary">Join Us Today!</h2>
 
 	<div class="form-floating my-2">
 		<InputText id="username" class="form-control" @bind-Value="User.DisplayName" placeholder="Enter your username" />
@@ -33,7 +33,7 @@
 	<div class="text-center">
 		<p>or register with:</p>
 		<a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?client_id=@GoogleSettings.Value.ClientId&redirect_uri=@Url.Value.BaseUrl/google-oauth-code&response_type=code&scope=openid%20profile%20email"
-		   class="btn btn-outline-info w-100 py-2 mb-2 fw-bold fs-5">
+		   class="btn btn-outline-secondary w-100 py-2 mb-2 fw-bold fs-5">
 			<i class="bi bi-google"></i>
 			<span class="d-inline-block">Google</span>
 		</a>
